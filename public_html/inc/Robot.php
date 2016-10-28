@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Class Robot
  */
@@ -12,6 +11,7 @@ class Robot {
 
     /**
      * Set currentQuantity and initQuantity.
+     *
      * @param $quantity
      */
     public function setQuantityRobot( $quantity )
@@ -22,6 +22,7 @@ class Robot {
 
     /**
      * Get current quantity.
+     *
      * @return integer
      */
     public function getQuantityRobot()
@@ -31,6 +32,7 @@ class Robot {
 
     /**
      * Set power item.
+     *
      * @param $setPower
      */
     public function setPowerRobot( $setPower )
@@ -40,6 +42,7 @@ class Robot {
 
     /**
      * Return sum of power.
+     *
      * @return integer
      */
     public function getPowerRobot()
@@ -70,11 +73,20 @@ class Robot {
 
     /**
      * Change current quantity.
+     *
      * @param $quantity
+     *
+     * @throws \Exception
      */
     public function changeQuantityRobot( $quantity )
     {
-        $this->currentQuantity = $this->currentQuantity - $quantity;
+        if ($this->currentQuantity > 0) {
+            $this->currentQuantity = $this->currentQuantity - $quantity;
+        }
+        else {
+            throw new Exception("Don't set initQuantity and currentQuantity");
+        }
+
     }
 }
 

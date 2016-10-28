@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Class FactoryBuild
  */
@@ -8,6 +7,7 @@ class FactoryBuild {
 
     /**
      * Set quantity for Robot.
+     *
      * @param \Robot $robotPrototype
      * @param $quantity
      */
