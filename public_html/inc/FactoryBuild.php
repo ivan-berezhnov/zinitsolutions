@@ -5,32 +5,33 @@
  * Class FactoryBuild
  */
 class FactoryBuild {
+
     /**
+     * Set quantity for Robot.
      * @param \Robot $robotPrototype
      * @param $quantity
      */
-
-    public $make;
-
     public function make( Robot $robotPrototype, $quantity ) {
-        
+        $robotPrototype->setQuantityRobot( $quantity );
     }
 
     /**
-     * @param \Robot $robot
+     * Get power from Robot.
      *
-     * @return mixed
+     * @param \Robot $robot
+     * @return integer
      */
     public function getPower( Robot $robot ) {
-
         return $robot->getPowerRobot();
     }
 
     /**
+     * Change quantity for Robot.
+     *
      * @param \Robot $robotPrototype
-     * @param $power
+     * @param integer $quantity
      */
-    public function turnOff( Robot $robotPrototype, $power ) {
-
+    public function turnOff( Robot $robotPrototype, $quantity ) {
+        $robotPrototype->changeQuantityRobot( $quantity );
     }
 }
